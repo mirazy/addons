@@ -15,7 +15,7 @@ RUN apk add --no-cache nodejs && \
     apk add --no-cache jq make gcc g++ python linux-headers udev && \
     npm init -f && \
     npm install mqtt && \
-    npm install serialport --build-from-source=serialport
+    npm install serialport --build-from-source
 
 RUN chmod a+x /run.sh
 
