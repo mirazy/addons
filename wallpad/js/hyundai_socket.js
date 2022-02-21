@@ -267,16 +267,12 @@ const CONST = {
         */
 		////////////////////////////////////////////////////////////////////////////////////
          
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 40 11 02 00 87 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 40 11 02 02 01 85'.toBuffer(), stateName: 'power', state: 'OFF' },
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 40 11 02 00 87 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 40 11 02 02 03 87'.toBuffer(), stateName: 'power', state: 'OFF' },
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 40 11 02 00 87 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 40 11 02 02 07 83'.toBuffer(), stateName: 'power', state: 'OFF' },
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 40 11 01 00 84 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 40 11 01 01 01 85'.toBuffer(), stateName: 'power', state:  'ON' },
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 40 11 01 00 84 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 40 11 01 01 03 87'.toBuffer(), stateName: 'power', state:  'ON' },
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 40 11 01 00 84 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 40 11 01 01 07 83'.toBuffer(), stateName: 'power', state:  'ON' },
-
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 01 00 86 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 42 11 01 01 01 87'.toBuffer(), stateName: 'speed', state:    'low' },
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 03 00 84 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 42 11 03 01 03 87'.toBuffer(), stateName: 'speed', state: 'medium' },
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 07 00 80 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 42 11 07 01 07 87'.toBuffer(), stateName: 'speed', state:   'high' },
+        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 40 11 02 00 87 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 41 2b 04 40 11 00 02 07 81'.toBuffer(), stateName: 'power', state: 'OFF' },
+        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 01 00 86 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 41 2b 04 40 11 00 01 01 84'.toBuffer(), stateName: 'power', state:  'ON' },
+        
+        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 01 00 86 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 41 2b 04 40 11 00 01 01 84'.toBuffer(), stateName: 'speed', state:    'low' },
+        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 03 00 84 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 41 2b 04 40 11 00 01 03 86'.toBuffer(), stateName: 'speed', state: 'medium' },
+        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 07 00 80 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 41 2b 04 40 11 00 01 07 82'.toBuffer(), stateName: 'speed', state:   'high' },
         /*
         { base_topic: 'climate/homenet/heater1-1', commandHex: 'f7 0b 01 18 02 46 11 01 00 b1 ee'.toBuffer(), ackHex: 'f7 0d 01 18 04 46 11 01 01'.toBuffer(), stateName: 'away_mode', state: 'OFF' },
         { base_topic: 'climate/homenet/heater1-1', commandHex: 'f7 0b 01 18 02 46 11 04 00 b4 ee'.toBuffer(), ackHex: 'f7 0d 01 18 04 46 11 04 04'.toBuffer(), stateName: 'away_mode', state: 'ON' },
