@@ -1,4 +1,6 @@
-serialport 에러 관련 수정
+####################################
+2022.02.21 serialport 에러 관련 수정
+####################################
 
 # Universal Wallpad Controller with RS485 
 
