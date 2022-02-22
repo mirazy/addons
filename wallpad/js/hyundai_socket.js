@@ -76,7 +76,7 @@ const CONST = {
         //'light/homenet/panel4-1': { name: 'room3_light1', unique_id: 'light-homenet-panel4-1', state_topic: '~/power/state', command_topic: '~/power/command' },
         //'light/homenet/panel5-1': { name: 'room4_light1', unique_id: 'light-homenet-panel5-1', state_topic: '~/power/state', command_topic: '~/power/command' },
 
-        'fan/homenet/panel1': { name: '환풍기', unique_id: 'fan-homenet-panel1', state_topic: '~/power/state', command_topic: '~/power/command', speed_state_topic: '~/speed/state', speed_command_topic: '~/speed/command', speeds:['low', 'medium', 'high'] },
+        'fan/homenet/panel1': { name: '환풍기', unique_id: 'fan-homenet-panel1', state_topic: '~/power/state', command_topic: '~/power/command', percentage_state_topic: '~/percentage/state', percentage_command_topic: '~/percentage/command', speeds:['1', '2', '3'] },
 
         //'switch/homenet/breaker1': { name: 'gas_breaker', unique_id: 'switch-homenet-breaker1', state_topic: '~/gas/state', command_topic: '~/gas/command' },
         //'switch/homenet/breaker2-1': { name: 'absence_mode_light', unique_id: 'switch-homenet-breaker2-1', state_topic: '~/light/state', command_topic: '~/light/command' },
@@ -226,7 +226,6 @@ const CONST = {
 
     DEVICE_COMMAND: [
         /*
-        { base_topic: 'light/homenet/panel1-1', commandHex: 'f7 0b 01 19 02 40 11 02 00 b5 ee'.toBuffer(), ackHex: 'f7 0b 01 19 04 40 11 02 02 b1'.toBuffer(), stateName: 'power', state: 'OFF' },
         { base_topic: 'light/homenet/panel1-1', commandHex: 'f7 0b 01 19 02 40 11 01 00 b6 ee'.toBuffer(), ackHex: 'f7 0b 01 19 04 40 11 01 01 b1'.toBuffer(), stateName: 'power', state: 'ON' },
         { base_topic: 'light/homenet/panel1-2', commandHex: 'f7 0b 01 19 02 40 12 02 00 b6 ee'.toBuffer(), ackHex: 'f7 0b 01 19 04 40 12 02 02 b2'.toBuffer(), stateName: 'power', state: 'OFF' },
         { base_topic: 'light/homenet/panel1-2', commandHex: 'f7 0b 01 19 02 40 12 01 00 b5 ee'.toBuffer(), ackHex: 'f7 0b 01 19 04 40 12 01 01 b2'.toBuffer(), stateName: 'power', state: 'ON' },
@@ -267,12 +266,12 @@ const CONST = {
         */
 		////////////////////////////////////////////////////////////////////////////////////
          
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 40 11 02 00 87 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 41 2b 04 40 11 00 02 07 81'.toBuffer(), stateName: 'power', state: 'OFF' },
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 01 00 86 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 41 2b 04 40 11 00 01 01 84'.toBuffer(), stateName: 'power', state:  'ON' },
+        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 40 11 02 00 87 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 40 11 02 02 00 84'.toBuffer(), stateName: 'power', state: 'OFF' },
+        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 40 11 01 00 84 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 40 11 01 01 03 87'.toBuffer(), stateName: 'power', state:  'ON' },
         
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 01 00 86 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 41 2b 04 40 11 00 01 01 84'.toBuffer(), stateName: 'speed', state:    'low' },
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 03 00 84 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 41 2b 04 40 11 00 01 03 86'.toBuffer(), stateName: 'speed', state: 'medium' },
-        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 07 00 80 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 41 2b 04 40 11 00 01 07 82'.toBuffer(), stateName: 'speed', state:   'high' },
+        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 01 00 86 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 42 11 01 01 01 87'.toBuffer(), stateName: 'percentage', state: '1' },
+        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 03 00 84 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 42 11 03 01 03 87'.toBuffer(), stateName: 'percentage', state: '2' },
+        { base_topic: 'fan/homenet/panel1', commandHex: 'f7 0b 01 2b 02 42 11 07 00 80 ee'.toBuffer(), ackHex: 'f7 0c 01 2b 04 42 11 07 01 07 87'.toBuffer(), stateName: 'percentage', state: '3' },
         /*
         { base_topic: 'climate/homenet/heater1-1', commandHex: 'f7 0b 01 18 02 46 11 01 00 b1 ee'.toBuffer(), ackHex: 'f7 0d 01 18 04 46 11 01 01'.toBuffer(), stateName: 'away_mode', state: 'OFF' },
         { base_topic: 'climate/homenet/heater1-1', commandHex: 'f7 0b 01 18 02 46 11 04 00 b4 ee'.toBuffer(), ackHex: 'f7 0d 01 18 04 46 11 04 04'.toBuffer(), stateName: 'away_mode', state: 'ON' },
@@ -439,9 +438,9 @@ const CONST = {
         { category: 'light/homenet/panel5-1', requestHex: 'f7 0b 01 19 01 40 51 00 00 f4 ee'.toBuffer(), lastActivity: new Date().getTime() + 5000, lastDelegateActivity: new Date().getTime() + 5000 },
         */
 		////////////////////////////////////////////////////////////////////////////////////
-        /*
-        { category: 'fan/homenet/panel1',   requestHex: 'f7 0b 01 2b 01 40 10 00 00 87'.toBuffer(), lastActivity: new Date().getTime()+10000, lastDelegateActivity: new Date().getTime()+10000 },
-
+        
+        //{ category: 'fan/homenet/panel1',   requestHex: 'f7 0b 01 2b 01 40 10 00 00 87'.toBuffer(), lastActivity: new Date().getTime()+10000, lastDelegateActivity: new Date().getTime()+10000 },
+	/*
         { category: 'switch/homenet/breaker1',   requestHex: 'f7 0b 01 1b 01 43 10 00 00 b4'.toBuffer(), lastActivity: new Date().getTime()+10000, lastDelegateActivity: new Date().getTime()+10000 },
         { category: 'switch/homenet/breaker2-1', requestHex: 'f7 0c 01 2a 01 40 11 00 19 00 99'.toBuffer(), lastActivity: new Date().getTime()+10000, lastDelegateActivity: new Date().getTime()+10000 },
         { category: 'switch/homenet/breaker2-2', requestHex: 'f7 0c 01 2a 01 43 11 00 1b 00 98'.toBuffer(), lastActivity: new Date().getTime()+10000, lastDelegateActivity: new Date().getTime()+10000 },
@@ -468,7 +467,7 @@ const CONST = {
     STATE_TOPIC: 'homeassistant/%s/%s/state', //상태 전달
     COMMAND_TOPIC: 'homeassistant/+/homenet/+/+/command', //명령 수신
 
-    COMMAND_MAX_RETRY_COUNT: 3
+    COMMAND_MAX_RETRY_COUNT: 1
 };
 
 //const EE = Uint8Array.of(0xee);
@@ -576,13 +575,20 @@ parser.on('data', buffer => {
                 //log(CONST.portHeader+' Unscheduled Request Found:', unscheduledRequestFound.category);
             }
             else {
-                log(CONST.portHeader + ' Unknown Request:', humanizeBuffer(buffer));
+		var hbuf = humanizeBuffer(buffer);
+		if (
+			!hbuf.startsWith('f70b01 34') &&
+			!hbuf.startsWith('f70b01 1b') &&
+			!hbuf.startsWith('f70d01') &&
+			!hbuf.startsWith('f70e01')) {
+                  log(CONST.portHeader + ' Unknown Request:', humanizeBuffer(buffer));
+		}
             }
         }
     } else if (buffer[4] == 0x02) {
         var cmdFound = CONST.DEVICE_COMMAND.find(obj => buffer.length + 1 === obj.commandHex.length && obj.commandHex.includes(buffer));
         if (cmdFound) {
-            //log(CONST.portHeader+' Command Found:', CONST.DEVICE_CONFIG[cmdFound.base_topic].name, '->', cmdFound.state, buffer.toString('hex', 0, 7), buffer.toString('hex', 7));
+            log(CONST.portHeader+' Command Found:', CONST.DEVICE_CONFIG[cmdFound.base_topic].name, '->', cmdFound.state, buffer.toString('hex', 0, 7), buffer.toString('hex', 7));
             updateStatus(cmdFound);
         }
         else {
@@ -593,7 +599,7 @@ parser.on('data', buffer => {
         var stateFound = CONST.DEVICE_STATE.filter(obj => obj.checkState(obj, buffer));
         if (stateFound.length !== 0) {
             stateFound.forEach(function (obj) {
-                // log(CONST.portHeader + ' State Found:', obj.base_topic, obj.stateName, obj.state);
+                log(CONST.portHeader + ' State Found:', obj.base_topic, obj.stateName, obj.state);
                 updateStatus(obj);
             });
         }
@@ -607,7 +613,12 @@ parser.on('data', buffer => {
                 }
             }
             else {
-                log(CONST.portHeader + ' Unknown Response:', humanizeBuffer(buffer));
+		var hbuf = humanizeBuffer(buffer);
+		if (!hbuf.startsWith('f70d01') &&
+			!hbuf.startsWith('f70b01') &&
+			!hbuf.startsWith('f70e01')) {
+                  log(CONST.portHeader + ' Unknown Response:', humanizeBuffer(buffer));
+		}
             }
         }
 		
@@ -694,14 +705,12 @@ const commandProc = () => {
     // 기존 홈넷 RS485 메시지와 충돌하지 않도록 Delay를 줌
     var delay = curTime - lastActivity;
     if (delay < CONST.sendDelay) return;
-
     // idle message 이후 정해진 시간동안만
 	var afterIdle = curTime - lastIdleBegin;
-    if (afterIdle > CONST.idleDuration) {
+    if (afterIdle < CONST.idleDuration) {
         //log(CONST.portHeader, afterIdle, 'ms passed after idling (safe duration ', CONST.idleDuration,'ms )' );
         return;
     }
-	
     // 큐에서 제어 메시지 가져오기
 	var obj;
     if (cmdQueue.length > 0) { 
@@ -729,13 +738,13 @@ const commandProc = () => {
         else {
             log(CONST.portHeader + ' Fail command:', obj.commandHex.toString('hex', 0, 7), obj.commandHex.toString('hex', 7));
         }
-	}
-	else if (obj.requestHex) {
+    }
+    else if (obj.requestHex) {
 		rs485port.write(obj.requestHex, (err) => { if (err) return log(CONST.portHeader + ' Send Error: ', err.message); });
         lastActivity = new Date().getTime();
         obj.lastDelegateActivity = lastActivity;
         //log(CONST.portHeader+' Delegate Scheduled Request:', obj.category, '('+delay+'ms)', obj.requestHex.toString('hex', 0, 7), obj.requestHex.toString('hex', 7) );
-	}
+    }
     else {
         log('[Queue] Unknown Object:', obj.toString());
     }
